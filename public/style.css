@@ -1,0 +1,33 @@
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css";
+.outline {
+    background-color: transparent;
+    color: inherit;
+    transition: all .25s;
+}
+.btn-primary.outline {
+    color: #428bca;
+    background: white;	
+}
+.btn-success.outline {
+    color: #18BC9C;
+    background: white;
+}
+.btn-info.outline {
+    color: #5bc0de;
+    background: white;
+}
+.btn-warning.outline {
+    color: #f0ad4e;
+    background: white;
+}
+.btn-danger.outline {
+    color: #d9534f;
+    background: white;
+}
+.btn-primary.outline:hover,
+.btn-success.outline:hover,
+.btn-info.outline:hover,
+.btn-warning.outline:hover,
+.btn-danger.outline:hover {
+    color: #fff;
+}

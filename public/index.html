@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html data-ng-app = "FitnessApp">
+    <head>
+    <title>FitnessApp</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-+ENW/yibaokMnme+vBLnHMphUYxHs34h9lpdbSLuAwGkOKFRl4C34WkjazBtb7eT" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    </head>
+    <body style="padding-top:70px;">
+      <div id="page">
+        
+            <!---Placeholder for view -->
+             <div data-ng-view></div>
+ 
+        <hr />
+ 
+        <footer class="container">
+           FitnessApp.
+        </footer>
+    </div>
+    <script src = "js/angular.min.js"></script>
+    <script src = "js/angular-route.min.js"></script>
+    <script src = "app.js"></script>
+    <script src = "./services/usersService.js"></script>
+    <script src = "./services/challengesService.js"></script>
+    <script src = "./services/nutritionService.js"></script>
+    <script type="text/javascript" src="./controllers/loginAndRegisterController.js"></script>
+    <script type="text/javascript" src="./controllers/challengeController.js"></script>
+    <script type="text/javascript" src="./controllers/profileController.js"></script>
+    <script type="text/javascript" src="./controllers/calCalculatorController.js"></script>
+    </body>
+</html>

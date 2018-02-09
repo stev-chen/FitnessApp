@@ -1,0 +1,101 @@
+<header class="container"> <!-- NAVBAR -->
+    <div class="navbar navbar-default navbar-fixed-top" id="menu" ng-controller = "loginAndRegisterController">
+        <div class="navbar-header navbar-inverse">
+            <button class="btn btn-success navbar-toggle"></button>
+            <a class="navbar-brand" href="#">Fitness App</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="#/explore">Explore</a></li>
+                <!--<li><a href="#/profile">My Profile</a></li>-->
+                <li><a href="#/about">About</a></li>
+                <li><a href="#/calorieCalculator">Cal Calculator</a></li>
+                <li><a href = "#/message">Messages</a></li>
+                <!--<li><a href="#/login">Login</a></li>
+                <li><a href="#/register">Register</a></li>-->
+            </ul>
+            <div class="navbar-collapse collapse navbar-right" style="margin-right: 7.5px;">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                    <a id="dropdown" class="dropdown-toggle" ng-show="loggedIn" data-toggle="dropdown" role="button" aria-expanded="true"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <strong>{{currentUser}}</strong> <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a ng-controller = "profileController" href = "" ng-click="goToProfile(currentUser)">Profile</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#/about" ng-click="logout()">Sign Out</a></li>
+                     <li><a ng-click="deleteUser()">Delete User</a></li>
+                    </ul> 
+                  </li>
+                <li><form action="#/login"><button href="#/login" class="btn btn-success outline navbar-btn" ng-show="!loggedIn">Login</button></form></li>
+                <li><form action="#/register"><button href="#/register" class="btn btn-success outline navbar-btn" ng-show="!loggedIn">Register</button></form></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header><!-- NAVBAR END-->
+<div>
+<div class="col-lg-12">
+            <div class="well bs-component">
+              <form class="form-horizontal" ng-submit="addChallenge(3, form.name, form.description, form.startDate, form.endDate, form.goal, form.type, getCurrentUser())" ng-controller="challengeController">
+                <fieldset>
+                  <legend>New Challenge</legend>
+                  <div class="form-group">
+                    <label for="inputName" class="col-lg-2 control-label">Challenge Name</label>
+                    <div class="col-lg-10">
+                      <input type="text" ng-model="form.name"  class="form-control" id="inputName" placeholder="Challenge 1">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="textArea" class="col-lg-2 control-label ">Challenge Description</label>
+                    <div class="col-lg-10">
+                      <textarea class="form-control" ng-model="form.description" rows="3" id="textArea"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">Type of Challenge</label>
+                    <div class="col-lg-10">
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="optionsRadios" id="optionsRadios1" ng-model="form.type"  value="Running Challenge" checked="">
+                          Running Challenge
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="optionsRadios" id="optionsRadios2" ng-model="form.type"  value="Calorie Challenge">
+                          Calorie Challenge
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="select" class="col-lg-2 control-label">Kilometer or Calorie Goal</label>
+                     <div class="col-lg-10">
+                      <input type="number" min = "0" ng-model="form.goal"  class="form-control" id="inputGoal" placeholder="123">
+                    </div>
+                      <br>
+                </div>
+                <div class="form-group">
+                    <label for="select" class="col-lg-2 control-label">Start Date</label>
+                     <div class="col-lg-10">
+                      <input type="text" ng-model="form.startDate"  class="form-control" id="inputSDate" placeholder="DD/MM/YY">
+                    </div>
+                      <br>
+                </div>
+                 <div class="form-group">
+                    <label for="select" class="col-lg-2 control-label">End Date</label>
+                     <div class="col-lg-10">
+                      <input type="text" ng-model="form.endDate" class="form-control" id="inputEDate" placeholder="DD/MM/YY">
+                    </div>
+                      <br>
+                </div>
+                  <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                      <a href = "#/explore"><button type="reset" class="btn btn-default">Cancel</button></a>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>
+          </div>
+</div>

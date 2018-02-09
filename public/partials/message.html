@@ -1,0 +1,53 @@
+<header class="container"> <!-- NAVBAR -->
+    <div class="navbar navbar-default navbar-fixed-top" id="menu" ng-controller = "loginAndRegisterController">
+        <div class="navbar-header navbar-inverse">
+            <button class="btn btn-success navbar-toggle"></button>
+            <a class="navbar-brand" href="#">Fitness App</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="#/explore">Explore</a></li>
+                <!--<li><a href="#/profile">My Profile</a></li>-->
+                <li><a href="#/about">About</a></li>
+                <li><a href="#/calorieCalculator">Cal Calculator</a></li>
+                <li><a href = "#/message">Messages</a></li>
+                <!--<li><a href="#/login">Login</a></li>
+                <li><a href="#/register">Register</a></li>-->
+            </ul>
+            <div class="navbar-collapse collapse navbar-right" style="margin-right: 7.5px;">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                    <a id="dropdown" class="dropdown-toggle" ng-show="loggedIn" data-toggle="dropdown" role="button" aria-expanded="true"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <strong>{{currentUser}}</strong> <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a ng-controller = "profileController" href = "" ng-click="goToProfile(currentUser)">Profile</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#/about" ng-click="logout()">Sign Out</a></li>
+                      <li><a ng-click="deleteUser()">Delete User</a></li>
+                    </ul> 
+                  </li>
+                <li><form action="#/login"><button href="#/login" class="btn btn-success outline navbar-btn" ng-show="!loggedIn">Login</button></form></li>
+                <li><form action="#/register"><button href="#/register" class="btn btn-success outline navbar-btn" ng-show="!loggedIn">Register</button></form></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header><!-- NAVBAR END-->
+    <div>
+    <div>
+        <ul class="list-group" ng-show="loggedIn">
+            <li class= "list-group-item" style="background-color:#F2F1EF; border: 1px solid #BDC3C7; position: relative; display: block; padding: 10px 15px; margin-bottom: 20px;">
+                <div class = "row">
+                    <div class="col-xs-2 col-md-1">
+                        &nbsp;
+                    </div>
+                    <div class="col-xs-6 col-md-8">
+                        <h4>{{message.data}}</h4>
+                    </div>
+                    <div class="col-xs-4 col-md-3">
+                        &nbsp;
+                    </div>
+               </div>
+            </li>
+        </ul>
+    </div>
+    </div> 
